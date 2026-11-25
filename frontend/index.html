@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ThermoGuard IoT</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="brand">
+            <div class="logo">TG</div>
+            <div>
+                <h1>ThermoGuard IoT</h1>
+                <p>INFRASTRUCTURE MONITORING</p>
+            </div>
+        </div>
+
+        <div id="connection" class="badge offline">
+            Conectando...
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <div>
+                <span class="eyebrow">MONITORAMENTO AMBIENTAL</span>
+                <h2>Visão geral</h2>
+                <p>Ambiente de servidores · SRV-001</p>
+            </div>
+
+            <div class="device">
+                ESP32 / DHT22
+            </div>
+        </section>
+
+        <div id="notification" class="notification">
+            Aguardando dados do dispositivo...
+        </div>
+
+        <section class="metrics">
+
+            <article class="card">
+                <span class="card-label">TEMPERATURA ATUAL</span>
+                <div class="value temperature">
+                    <span id="temperature">--</span>
+                    <small>°C</small>
+                </div>
+                <p>Limite de alerta: 30 °C</p>
+            </article>
+
+            <article class="card">
+                <span class="card-label">UMIDADE RELATIVA</span>
+                <div class="value humidity">
+                    <span id="humidity">--</span>
+                    <small>%</small>
+                </div>
+                <p>Sensor digital DHT22</p>
+            </article>
+
+            <article class="card">
+                <span class="card-label">CONDIÇÃO TÉRMICA</span>
+                <div id="thermal" class="value status-value">
+                    --
+                </div>
+                <p>Classificação da última leitura</p>
+            </article>
+
+            <article class="card">
+                <span class="card-label">ÚLTIMA ATUALIZAÇÃO</span>
+                <div id="last-update" class="value time-value">
+                    --:--:--
+                </div>
+                <p id="data-age">Aguardando leitura</p>
+            </article>
+
+        </section>
+
+        <section class="charts">
+
+            <article class="card">
+                <h3>Histórico de temperatura</h3>
+                <p>Últimas 50 leituras em °C</p>
+
+                <div class="chart-container">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Histórico de umidade</h3>
+                <p>Últimas 50 leituras em %</p>
+
+                <div class="chart-container">
+                    <canvas id="humidityChart"></canvas>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="statistics">
+
+            <article class="card">
+                <span class="card-label">TEMPERATURA MÉDIA</span>
+                <div id="average" class="stat-value">--</div>
+            </article>
+
+            <article class="card">
+                <span class="card-label">TEMPERATURA MÁXIMA</span>
+                <div id="maximum" class="stat-value">--</div>
+            </article>
+
+            <article class="card">
+                <span class="card-label">TEMPERATURA MÍNIMA</span>
+                <div id="minimum" class="stat-value">--</div>
+            </article>
+
+            <article class="card">
+                <span class="card-label">TOTAL DE ALERTAS</span>
+                <div id="alerts" class="stat-value">--</div>
+            </article>
+
+        </section>
+
+        <section class="card history">
+            <h3>Registros recentes</h3>
+            <p>Histórico de transmissão do dispositivo</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Dispositivo</th>
+                            <th>Temperatura</th>
+                            <th>Umidade</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="history-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            ThermoGuard IoT · Arquitetura de Computadores
+            <br>
+            ESP32 · HTTPS · Supabase · PostgreSQL
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

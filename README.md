@@ -129,9 +129,9 @@ As credenciais privilegiadas do PostgreSQL permanecem exclusivamente no backend.
 
 ## Links
 
-- Simulação Wokwi: [Inserir link]
-- Dashboard publicado: [Inserir link]
-- API REST: [Inserir URL]
+- Simulação Wokwi: [https://wokwi.com/projects/481529673802472449]
+- Dashboard publicado: [https://thermoguard-iot.hugoalvesdasilva49.workers.dev/]
+- API REST: [http://127.0.0.1:5500/index.html]
 - Vídeo de demonstração: [Inserir link]
 
 ## Contexto acadêmico

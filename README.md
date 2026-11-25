@@ -142,4 +142,4 @@ Curso de Inteligência Artificial
 
 Disciplina: Arquitetura de Computadores
 
-Desenvolvedor: [Inserir nome completo]
+Desenvolvedor: [Hugo Alves da Silva, João Daniel, Gabriel Saes, Gabriel Marques]
